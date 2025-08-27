@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 30 58 138;
+  --primary-foreground: 249 250 251;
+  --secondary: 5 150 105;
+  --secondary-foreground: 249 250 251;
+  --background: 255 255 255;
+  --foreground: 15 23 42;
+  --muted: 248 250 252;
+  --muted-foreground: 100 116 139;
+  --accent: 14 165 233;
+  --accent-foreground: 249 250 251;
+  --border: 226 232 240;
+  --input: 226 232 240;
+  --ring: 30 58 138;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --primary: 147 197 253;
+  --primary-foreground: 15 23 42;
+  --secondary: 52 211 153;
+  --secondary-foreground: 15 23 42;
+  --background: 15 23 42;
+  --foreground: 248 250 252;
+  --muted: 51 65 85;
+  --muted-foreground: 148 163 184;
+  --accent: 56 189 248;
+  --accent-foreground: 15 23 42;
+  --border: 51 65 85;
+  --input: 51 65 85;
+  --ring: 147 197 253;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
