@@ -429,20 +429,45 @@
                 return;
             }
             
-            // Simulate form submission
+            // Submit to backend API
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
-                alert('Thank you for your strategic inquiry! We will respond within 24-48 hours.');
-                contactForm.reset();
+            // Make API call
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    company: data.company,
+                    role: data.role || null,
+                    interest: data.interest,
+                    message: data.message
+                })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    alert('Thank you for your strategic inquiry! We will respond within 24-48 hours.');
+                    contactForm.reset();
+                } else {
+                    alert('There was an error submitting your inquiry. Please try again or email us directly.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your inquiry. Please try again or email us directly.');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
+            });
         });
         
         // Navigation Background on Scroll

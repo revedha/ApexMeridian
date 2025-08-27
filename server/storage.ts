@@ -1,7 +1,7 @@
 import { type User, type InsertUser, type ContactSubmission, type InsertContactSubmission, contactSubmissions, users } from "@shared/schema";
 import { randomUUID } from "crypto";
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
@@ -62,11 +62,8 @@ class DbStorage implements IStorage {
     if (!process.env.DATABASE_URL) {
       throw new Error("DATABASE_URL is required for database storage");
     }
-    const client = postgres(process.env.DATABASE_URL, { 
-      ssl: 'require',
-      max: 1
-    });
-    this.db = drizzle(client);
+    const sql = neon(process.env.DATABASE_URL);
+    this.db = drizzle(sql);
   }
 
   async getUser(id: string): Promise<User | undefined> {

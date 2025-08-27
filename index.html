@@ -1,284 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Meridian</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1e293b; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Navigation */
-        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; z-index: 1000; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { display: flex; align-items: center; font-size: 1.25rem; font-weight: bold; }
-        .logo-icon { width: 40px; height: 40px; background: #1e40af; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; }
-        .logo-shape { width: 24px; height: 24px; background: white; border-radius: 4px; transform: rotate(45deg); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: #64748b; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #1e40af; }
-        
-        /* Hero Section */
-        .hero { min-height: 100vh; background: linear-gradient(135deg, #eff6ff 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 20px 20px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: bold; margin-bottom: 1.5rem; line-height: 1.1; }
-        .hero .highlight { color: #1e40af; }
-        .hero p { font-size: clamp(1rem, 2.5vw, 1.5rem); color: #64748b; margin-bottom: 2rem; max-width: 800px; }
-        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 12px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block; }
-        .btn-primary { background: #1e40af; color: white; border: 2px solid #1e40af; }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-secondary { background: transparent; color: #1e40af; border: 2px solid #1e40af; }
-        .btn-secondary:hover { background: #eff6ff; }
-        
-        /* Sections */
-        section { padding: 5rem 0; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: bold; margin-bottom: 1rem; }
-        .section-header p { font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto; }
-        
-        /* Ventures */
-        .ventures { background: white; }
-        .venture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
-        .venture-card { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 2rem; border-radius: 16px; }
-        .venture-card.emerald { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
-        .venture-icon { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-        .venture-icon.blue { background: #1e40af; }
-        .venture-icon.emerald { background: #059669; }
-        .venture-icon-shape { width: 24px; height: 24px; background: white; border-radius: 4px; }
-        .venture-card h3 { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
-        .venture-card p { color: #64748b; margin-bottom: 1.5rem; }
-        .venture-link { color: #1e40af; font-weight: 600; text-decoration: none; }
-        .venture-card.emerald .venture-link { color: #059669; }
-        
-        /* About */
-        .about { background: #f8fafc; }
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .about-item { text-align: center; }
-        .about-icon { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
-        .about-icon.blue { background: #dbeafe; }
-        .about-icon.emerald { background: #d1fae5; }
-        .about-icon.purple { background: #e9d5ff; }
-        .about-icon-shape { width: 32px; height: 32px; border-radius: 4px; }
-        .about-icon.blue .about-icon-shape { background: #1e40af; }
-        .about-icon.emerald .about-icon-shape { background: #059669; }
-        .about-icon.purple .about-icon-shape { background: #7c3aed; }
-        .about-item h3 { font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; }
-        .about-item p { color: #64748b; }
-        
-        /* Contact */
-        .contact { background: white; }
-        .contact-content { background: #f8fafc; border-radius: 16px; padding: 3rem; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
-        .contact-info h3 { font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; }
-        .contact-item { display: flex; align-items: center; margin-bottom: 1rem; }
-        .contact-icon { width: 24px; height: 24px; border-radius: 4px; margin-right: 1rem; }
-        .contact-icon.blue { background: #1e40af; }
-        .contact-icon.emerald { background: #059669; }
-        .contact-icon.purple { background: #7c3aed; }
-        .contact-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .contact-card h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
-        .contact-card p { color: #64748b; margin-bottom: 1.5rem; }
-        
-        /* Footer */
-        footer { background: #0f172a; color: white; padding: 3rem 0; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-        .footer-section h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; }
-        .footer-section p, .footer-section li { color: #94a3b8; }
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-        .footer-section a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
-        .footer-section a:hover { color: white; }
-        .footer-bottom { border-top: 1px solid #334155; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-bottom p { color: #94a3b8; font-size: 0.875rem; }
-        .footer-links { display: flex; gap: 1.5rem; }
-        .footer-links a { color: #94a3b8; font-size: 0.875rem; text-decoration: none; }
-        
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .venture-grid { grid-template-columns: 1fr; }
-            .contact-content { padding: 2rem; }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Meridian Corporate</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script>
+        // Redirect to homepage after a brief moment
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = 'pages/homepage.html';
+            }, 100);
+        };
+    </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">
-                <div class="logo-icon"><div class="logo-shape"></div></div>
-                Apex Meridian
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#ventures">Ventures</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-family: Arial, sans-serif;">
+        <div style="text-align: center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; animation: fadeIn 1s ease-in;">Apex Meridian Corporate</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Redirecting to homepage...</p>
+            <div style="width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
         </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div>
-            <h1>Shaping the Future at the Intersection of <span class="highlight">Strategy and Execution</span></h1>
-            <p>Apex Meridian is a visionary holding company operating at the intersection of data intelligence and AI-powered execution, building ventures that solve real problems with precision.</p>
-            <div class="hero-buttons">
-                <a href="#ventures" class="btn btn-primary">Explore Our Ventures</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="ventures" class="ventures">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Ventures</h2>
-                <p>We build and scale ventures that harness the power of data and AI to create meaningful impact</p>
-            </div>
-            <div class="venture-grid">
-                <div class="venture-card">
-                    <div class="venture-icon blue"><div class="venture-icon-shape"></div></div>
-                    <h3>Signalyze</h3>
-                    <p>Advanced data strategy and customer insights platform that transforms raw data into actionable intelligence</p>
-                    <a href="#" class="venture-link">Learn More →</a>
-                </div>
-                <div class="venture-card emerald">
-                    <div class="venture-icon emerald"><div class="venture-icon-shape"></div></div>
-                    <h3>Apex Labs</h3>
-                    <p>Rapid prototyping and development studio focused on building innovative solutions with cutting-edge technology</p>
-                    <a href="#" class="venture-link">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Apex Meridian</h2>
-                <p>We are a strategic holding company that identifies, builds, and scales high-impact ventures at the intersection of data intelligence and AI-powered execution.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-item">
-                    <div class="about-icon blue"><div class="about-icon-shape"></div></div>
-                    <h3>Strategic Vision</h3>
-                    <p>Long-term thinking meets actionable execution in every venture we build and scale.</p>
-                </div>
-                <div class="about-item">
-                    <div class="about-icon emerald"><div class="about-icon-shape"></div></div>
-                    <h3>Data-Driven</h3>
-                    <p>Every decision is backed by data intelligence and real-world market validation.</p>
-                </div>
-                <div class="about-item">
-                    <div class="about-icon purple"><div class="about-icon-shape"></div></div>
-                    <h3>Innovation Focus</h3>
-                    <p>Cutting-edge technology and AI-powered solutions that solve real-world problems.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to explore partnership opportunities or learn more about our ventures?</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <div class="contact-item">
-                            <div class="contact-icon blue"></div>
-                            <span>hello@apexmeridian.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon emerald"></div>
-                            <span>+1 (555) 123-4567</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon purple"></div>
-                            <span>San Francisco, CA</span>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <h4>Partnership Opportunities</h4>
-                        <p>We're always looking for strategic partners, innovative startups, and exceptional talent to join our ecosystem.</p>
-                        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Schedule a Meeting</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo" style="color: white; margin-bottom: 1rem;">
-                        <div class="logo-icon" style="background: #3b82f6;"><div class="logo-shape"></div></div>
-                        Apex Meridian
-                    </div>
-                    <p>Shaping the future at the intersection of strategy and execution through innovative ventures.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Our Ventures</h4>
-                    <ul>
-                        <li><a href="#">Signalyze</a></li>
-                        <li><a href="#">Apex Labs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>hello@apexmeridian.com</li>
-                        <li>+1 (555) 123-4567</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Apex Meridian. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    </div>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </body>
 </html>
