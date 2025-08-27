@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import { contactSubmissions, insertContactSubmissionSchema } from '../shared/schema.js';
+import { contactSubmissions, insertContactSubmissionSchema } from '../shared/schema';
 import { z } from 'zod';
 
 const sql = postgres(process.env.DATABASE_URL!);
