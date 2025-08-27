@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "Building Apex Meridian website..."
-echo "No build step required - using static HTML files"
-echo "API functions handled by Vercel serverless"
-exit 0
