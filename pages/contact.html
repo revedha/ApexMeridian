@@ -277,19 +277,38 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Phone Contact -->
-                <div class="card-venture text-center group cursor-pointer" onclick="window.location.href='tel:+918754981502';">
+                <!-- Strategic Partnerships -->
+                <div class="card-venture text-center group cursor-pointer" onclick="document.getElementById('interest').value='partnership'; document.getElementById('contact-form-element').scrollIntoView({behavior: 'smooth'});">
                     <div class="w-16 h-16 bg-primary-100 rounded-xl mx-auto mb-6 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
                         <svg class="w-8 h-8 text-primary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Direct Phone</h3>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Strategic Partnerships</h3>
                     <p class="text-slate-600 mb-6">
-                        Call us directly for immediate strategic discussions and partnership opportunities.
+                        Explore long-term strategic alliances and collaborative opportunities that align with your business objectives.
                     </p>
                     <div class="flex items-center justify-center text-primary font-semibold group-hover:text-primary-700">
-                        +91 87549 81502
+                        Discuss Partnership
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Venture Collaboration -->
+                <div class="card-venture text-center group cursor-pointer" onclick="document.getElementById('interest').value='venture-collaboration'; document.getElementById('contact-form-element').scrollIntoView({behavior: 'smooth'});">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-xl mx-auto mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                        <svg class="w-8 h-8 text-secondary group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Venture Collaboration</h3>
+                    <p class="text-slate-600 mb-6">
+                        Connect with Signalyze or Apex Meridian Labs for specific project collaboration and solution development.
+                    </p>
+                    <div class="flex items-center justify-center text-secondary font-semibold group-hover:text-secondary-700">
+                        Explore Ventures
                         <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
