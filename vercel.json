@@ -11,7 +11,7 @@
       "dest": "/api/index.ts"
     },
     {
-      "src": "/api/contact-submissions",
+      "src": "/api/contact-submissions", 
       "dest": "/api/index.ts"
     },
     {
@@ -31,6 +31,7 @@
       "dest": "/$1"
     }
   ],
+  "buildCommand": "./build",
   "framework": null,
   "env": {
     "DATABASE_URL": "@database_url"
