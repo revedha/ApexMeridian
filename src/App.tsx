@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Router, Route } from 'wouter'
-import HomePage from './pages/HomePage.js'
+import HomePage from './pages/HomePage'
 
 const queryClient = new QueryClient()
 

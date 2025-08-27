@@ -9,7 +9,3 @@ attached_assets/
 *.log
 .env*
 README.md
-pages/
-css/
-index.html
-manifest.json
