@@ -1,6 +1,6 @@
-# Apex Meridian Corporate Website
+# Apex Meridian Website
 
-A professional corporate website for Apex Meridian, showcasing ventures Signalyze and Apex Labs.
+A professional website for Apex Meridian, showcasing ventures Signalyze and Apex Labs.
 
 ## Features
 
