@@ -13,6 +13,9 @@ export const contactSubmissions = pgTable("contact_submissions", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull(),
+  company: text("company").notNull(),
+  role: text("role"),
+  interest: text("interest").notNull(),
   message: text("message").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -25,6 +28,9 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions).pick({
   name: true,
   email: true,
+  company: true,
+  role: true,
+  interest: true,
   message: true,
 });
 
