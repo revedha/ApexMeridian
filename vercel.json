@@ -1,37 +1,22 @@
 {
   "version": 2,
   "functions": {
-    "api/index.ts": {
+    "dist/index.js": {
       "runtime": "@vercel/node"
     }
   },
   "routes": [
     {
-      "src": "/api/contact",
-      "dest": "/api/index.ts"
-    },
-    {
-      "src": "/api/contact-submissions", 
-      "dest": "/api/index.ts"
-    },
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/pages/(.*)",
-      "dest": "/pages/$1"
+      "src": "/api/(.*)",
+      "dest": "/dist/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/build/$1"
     }
   ],
-  "buildCommand": "./build",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
   "framework": null,
   "env": {
     "DATABASE_URL": "$DATABASE_URL"
