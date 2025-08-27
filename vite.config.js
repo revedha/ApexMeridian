@@ -5,9 +5,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   plugins: [
-    react({
-      jsxRuntime: 'classic'
-    }),
+    react(),
   ],
   css: {
     postcss: './postcss.config.js',
