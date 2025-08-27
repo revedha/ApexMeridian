@@ -1,6 +1,6 @@
 # Overview
 
-Apex Meridian is a modern full-stack web application built as a parent company website showcasing two key ventures: Signalyze (data strategy and customer insights) and Apex Labs (rapid prototyping and development). The application features a clean, professional landing page with sections for company information, venture details, and a contact form for lead generation.
+Apex Meridian is a modern full-stack web application built as a parent company website showcasing two key ventures: Signalyze (data strategy and customer insights) and Apex Labs (rapid prototyping and development). The application features a clean, professional landing page with sections for company information, venture details, and a contact form for lead generation. The company is officially registered as Apex Meridian Private Limited.
 
 # User Preferences
 
