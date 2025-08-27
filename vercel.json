@@ -7,7 +7,11 @@
   },
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/contact",
+      "dest": "/api/index.ts"
+    },
+    {
+      "src": "/api/contact-submissions",
       "dest": "/api/index.ts"
     },
     {
@@ -27,6 +31,7 @@
       "dest": "/$1"
     }
   ],
+  "framework": null,
   "env": {
     "DATABASE_URL": "@database_url"
   }

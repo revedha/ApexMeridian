@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+.git
+client/
+migrations/
+build.sh
+package.json.backup
+attached_assets/
+*.log
+.env*
+README.md
