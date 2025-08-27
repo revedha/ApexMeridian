@@ -14,9 +14,11 @@ export default defineConfig({
       '@assets': fileURLToPath(new URL('./attached_assets', import.meta.url)),
     },
   },
-  root: 'client',
   build: {
-    outDir: '../build',
+    rollupOptions: {
+      input: 'client/index.html',
+    },
+    outDir: 'build',
     emptyOutDir: true,
   },
   server: {
