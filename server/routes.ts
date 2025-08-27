@@ -13,6 +13,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Serve CSS files
   app.use('/css', express.static(path.join(rootPath, 'css')));
   
+  // Serve assets (logos, images)
+  app.use('/assets', express.static(path.join(rootPath, 'assets')));
+  
   // Serve pages
   app.use('/pages', express.static(path.join(rootPath, 'pages')));
   
