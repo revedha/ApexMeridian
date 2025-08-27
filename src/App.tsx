@@ -1,3 +1,4 @@
+import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Router, Route } from 'wouter'
 import HomePage from './pages/HomePage'
