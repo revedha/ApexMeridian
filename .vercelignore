@@ -1,0 +1,9 @@
+node_modules
+.git
+server
+client
+dist
+.replit
+.config
+migrations
+attached_assets
