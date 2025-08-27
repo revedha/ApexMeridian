@@ -14,7 +14,7 @@ export default defineConfig({
       '@assets': fileURLToPath(new URL('./attached_assets', import.meta.url)),
     },
   },
-  root: './client',
+  root: 'client',
   build: {
     outDir: '../build',
     emptyOutDir: true,
