@@ -1,9 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "dist/index.js": {
-      "runtime": "@vercel/node@18.x"
-    }
+    "dist/index.js": {}
   },
   "routes": [
     {
