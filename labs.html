@@ -220,71 +220,105 @@
     </section>
 
     <!-- Tools & Expertise -->
-    <section id="tools-expertise" class="section-padding bg-white">
-        <div class="container-max px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
-                    <span class="text-gradient-accent">Tools We Work With</span>
-                </h2>
-                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                    Our expertise lies in connecting systems, automating workflows, and building scalable solutions.
-                </p>
-            </div>
+    <section id="tools-expertise" class="section-padding bg-gradient-to-br from-accent-50 via-white to-primary-50">
+        <div class="container-max">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Section Header -->
+                <div class="mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+                        Tools We Work With
+                    </h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8"></div>
+                </div>
+                
+                <!-- Tools Content -->
+                <div class="bg-white rounded-2xl shadow-venture p-8 lg:p-12 border border-slate-200">
+                    <div class="mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-accent via-secondary to-primary rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">AI-First Platform Expertise</h3>
+                    </div>
+                    
+                    <p class="text-lg text-slate-700 leading-relaxed mb-8">
+                        Our expertise lies in connecting systems, automating workflows, and building scalable solutions using cutting-edge platforms that enable rapid prototyping and deployment.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                        <!-- n8n -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-slate-100 rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                <div class="text-center">
+                                    <div class="text-lg font-bold text-slate-700 group-hover:text-white">n8n</div>
+                                    <div class="text-xs text-slate-500 group-hover:text-white">●●●</div>
+                                </div>
+                            </div>
+                            <h4 class="text-sm font-semibold text-slate-900">n8n</h4>
+                        </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- n8n -->
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-slate-100 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-slate-700 group-hover:text-white">n8n</div>
-                            <div class="text-xs text-slate-500 group-hover:text-white">●●●</div>
+                        <!-- Voiceflow -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-slate-100 rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="8" r="3" fill="currentColor"/>
+                                    <path d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/>
+                                    <path d="M8 10l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-sm font-semibold text-slate-900">Voiceflow</h4>
+                        </div>
+
+                        <!-- Zapier -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-slate-100 rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L8 8h8l-4-6zM2 12l6-4v8l-6-4zM12 22l4-6H8l4 6zM22 12l-6 4V8l6 4z"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-sm font-semibold text-slate-900">Zapier</h4>
+                        </div>
+
+                        <!-- Make -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-slate-100 rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <circle cx="6" cy="6" r="3"/>
+                                    <circle cx="18" cy="6" r="3"/>
+                                    <circle cx="6" cy="18" r="3"/>
+                                    <circle cx="18" cy="18" r="3"/>
+                                    <path d="M9 6h6M6 9v6M9 18h6M18 9v6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-sm font-semibold text-slate-900">Make</h4>
                         </div>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900">n8n</h3>
-                </div>
-
-                <!-- Voiceflow -->
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-slate-100 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-                            <circle cx="12" cy="8" r="3" fill="currentColor"/>
-                            <path d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/>
-                            <path d="M8 10l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">Integration</div>
+                            <p class="text-slate-600">Seamless system connections</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary mb-2">Automation</div>
+                            <p class="text-slate-600">Intelligent workflow orchestration</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">Scale</div>
+                            <p class="text-slate-600">Enterprise-ready solutions</p>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900">Voiceflow</h3>
-                </div>
-
-                <!-- Zapier -->
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-slate-100 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L8 8h8l-4-6zM2 12l6-4v8l-6-4zM12 22l4-6H8l4 6zM22 12l-6 4V8l6 4z"/>
-                        </svg>
+                    
+                    <div class="flex justify-center">
+                        <a href="contact.html" class="btn-primary inline-flex items-center text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                            Start Your Project
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-900">Zapier</h3>
                 </div>
-
-                <!-- Make -->
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-slate-100 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="6" cy="6" r="3"/>
-                            <circle cx="18" cy="6" r="3"/>
-                            <circle cx="6" cy="18" r="3"/>
-                            <circle cx="18" cy="18" r="3"/>
-                            <path d="M9 6h6M6 9v6M9 18h6M18 9v6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-slate-900">Make</h3>
-                </div>
-            </div>
-
-            <!-- Additional Text -->
-            <div class="text-center mt-12">
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                    And other AI-first platforms that enable rapid prototyping and scalable automation solutions.
-                </p>
             </div>
         </div>
     </section>
