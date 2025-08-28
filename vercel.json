@@ -15,7 +15,7 @@
     },
     {
       "source": "/ventures.html",
-      "destination": "/ventures",
+      "destination": "/ventures", 
       "permanent": true
     },
     {
@@ -40,7 +40,7 @@
       "destination": "/about.html"
     },
     {
-      "source": "/ventures",
+      "source": "/ventures", 
       "destination": "/ventures.html"
     },
     {
@@ -50,19 +50,10 @@
     {
       "source": "/contact",
       "destination": "/contact.html"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/contact",
-      "dest": "/api/contact.ts"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/api/contact",
+      "destination": "/api/contact.ts"
     }
   ]
 }
