@@ -7,6 +7,51 @@
       "runtime": "@vercel/node@3.0.27"
     }
   },
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/ventures.html",
+      "destination": "/ventures",
+      "permanent": true
+    },
+    {
+      "source": "/labs.html",
+      "destination": "/labs",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/ventures",
+      "destination": "/ventures.html"
+    },
+    {
+      "source": "/labs",
+      "destination": "/labs.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    }
+  ],
   "routes": [
     {
       "src": "/api/contact",

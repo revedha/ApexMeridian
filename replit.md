@@ -2,6 +2,20 @@
 
 Apex Meridian is a modern full-stack web application built as a parent company website showcasing two key ventures: Signalyze (data strategy and customer insights) and Apex Labs (rapid prototyping and development). The application features a clean, professional landing page with sections for company information, venture details, and a contact form for lead generation. The company is officially registered as Apex Meridian Private Limited.
 
+# Recent Changes
+
+## August 28, 2025 - Clean URLs Implementation
+- **Modernized URL Structure**: Removed .html extensions from all URLs for modern web standards
+- **Updated vercel.json**: Added redirects from .html to clean URLs and rewrites for proper serving
+- **Updated All Internal Links**: Changed all href references across the entire site:
+  - `/about.html` → `/about`
+  - `/ventures.html` → `/ventures` 
+  - `/labs.html` → `/labs`
+  - `/contact.html` → `/contact`
+  - `/index.html` → `/`
+- **SEO Benefits**: Permanent 301 redirects ensure old .html URLs redirect to clean versions
+- **User Experience**: Professional URLs without file extensions matching modern web standards
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
