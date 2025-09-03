@@ -49,6 +49,24 @@ app.use((req, res, next) => {
 
   // Serve static files
   const rootPath = path.resolve(import.meta.dirname, "..");
+  
+  // Clean URL routing for development (matches vercel.json rewrites)
+  app.get('/about', (req, res) => {
+    res.sendFile(path.join(rootPath, 'about.html'));
+  });
+  
+  app.get('/ventures', (req, res) => {
+    res.sendFile(path.join(rootPath, 'ventures.html'));
+  });
+  
+  app.get('/labs', (req, res) => {
+    res.sendFile(path.join(rootPath, 'labs.html'));
+  });
+  
+  app.get('/contact', (req, res) => {
+    res.sendFile(path.join(rootPath, 'contact.html'));
+  });
+
   app.use(express.static(rootPath));
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
