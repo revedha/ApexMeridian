@@ -60,13 +60,22 @@ class DbStorage implements IStorage {
 
   constructor() {
     // Prioritize new Neon database credentials (PG* env vars) over old DATABASE_URL
-    const databaseUrl = (process.env.PGHOST && process.env.PGUSER && process.env.PGPASSWORD && process.env.PGDATABASE)
+    let databaseUrl = (process.env.PGHOST && process.env.PGUSER && process.env.PGPASSWORD && process.env.PGDATABASE)
       ? `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}/${process.env.PGDATABASE}?sslmode=require`
       : process.env.DATABASE_URL;
     
     if (!databaseUrl || databaseUrl.includes('undefined')) {
       throw new Error("Database credentials are required for database storage");
     }
+    
+    // Extract the connection string if it has psql prefix
+    if (databaseUrl.includes('postgresql://')) {
+      const match = databaseUrl.match(/postgresql:\/\/[^\s'"]+/);
+      if (match) {
+        databaseUrl = match[0];
+      }
+    }
+    
     const sql = postgres(databaseUrl);
     this.db = drizzle(sql);
   }
