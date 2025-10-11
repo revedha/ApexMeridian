@@ -101,9 +101,7 @@ class DbStorage implements IStorage {
       ...insertSubmission,
       role: insertSubmission.role || null,
     };
-    console.log('[DbStorage] Inserting submission:', submissionData);
     const result = await this.db.insert(contactSubmissions).values(submissionData).returning();
-    console.log('[DbStorage] Insert result:', result);
     return result[0];
   }
 
