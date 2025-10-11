@@ -31,6 +31,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const submission = await storage.createContactSubmission(validatedData);
       res.json({ success: true, id: submission.id });
     } catch (error) {
+      console.error("Contact submission error:", error);
       if (error instanceof z.ZodError) {
         res.status(400).json({ 
           success: false, 

@@ -59,9 +59,10 @@ class DbStorage implements IStorage {
   private db;
 
   constructor() {
-    // Use Neon database credentials from environment
-    const databaseUrl = process.env.DATABASE_URL || 
-      `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}/${process.env.PGDATABASE}?sslmode=require`;
+    // Prioritize new Neon database credentials (PG* env vars) over old DATABASE_URL
+    const databaseUrl = (process.env.PGHOST && process.env.PGUSER && process.env.PGPASSWORD && process.env.PGDATABASE)
+      ? `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}/${process.env.PGDATABASE}?sslmode=require`
+      : process.env.DATABASE_URL;
     
     if (!databaseUrl || databaseUrl.includes('undefined')) {
       throw new Error("Database credentials are required for database storage");
