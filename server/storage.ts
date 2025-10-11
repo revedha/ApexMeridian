@@ -1,7 +1,7 @@
 import { type User, type InsertUser, type ContactSubmission, type InsertContactSubmission, contactSubmissions, users } from "@shared/schema";
 import { randomUUID } from "crypto";
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
 import { eq } from "drizzle-orm";
 
 export interface IStorage {
@@ -76,7 +76,8 @@ class DbStorage implements IStorage {
       }
     }
     
-    const sql = postgres(databaseUrl);
+    // Use Neon serverless driver for proper HTTP-based connection
+    const sql = neon(databaseUrl);
     this.db = drizzle(sql);
   }
 
@@ -100,7 +101,9 @@ class DbStorage implements IStorage {
       ...insertSubmission,
       role: insertSubmission.role || null,
     };
+    console.log('[DbStorage] Inserting submission:', submissionData);
     const result = await this.db.insert(contactSubmissions).values(submissionData).returning();
+    console.log('[DbStorage] Insert result:', result);
     return result[0];
   }
 
