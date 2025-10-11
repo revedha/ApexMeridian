@@ -4,6 +4,14 @@ Apex Meridian is a modern full-stack web application built as a parent company w
 
 # Recent Changes
 
+## October 11, 2025 - Neon Database Migration
+- **Database Migration**: Successfully migrated from Replit's built-in database to user's personal Neon PostgreSQL database
+- **Connection Setup**: Configured DATABASE_URL secret with Neon connection string for secure database access
+- **Schema Creation**: Created database tables (users and contact_submissions) in Neon using direct SQL
+- **Storage Layer Update**: Enhanced DbStorage class to handle DATABASE_URL with psql prefix extraction
+- **Contact Form Integration**: Verified contact form submissions are successfully persisting to Neon database
+- **Database Management**: User now manages database directly through personal Neon account dashboard
+
 ## August 28, 2025 - Clean URLs Implementation
 - **Modernized URL Structure**: Removed .html extensions from all URLs for modern web standards
 - **Updated vercel.json**: Added redirects from .html to clean URLs and rewrites for proper serving
